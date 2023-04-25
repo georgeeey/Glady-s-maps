@@ -1,2 +1,12 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+"""
+     Student: Gabriel Solomon
+     Module: gladysUserInterface
+     Description: This module does …
+"""
+# Start of Code by Georges Diboki 
+
+# This is the text-based menu so user knows what to type 
+def main(): 
+    x1, y1, x2, y2 = None, None, None, None 
+    while True: 
+        print("GPS Distance Calculator")
