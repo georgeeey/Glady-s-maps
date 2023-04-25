@@ -1,7 +1,7 @@
 """
-     Student: Gabriel Solomon
+     Student: Georges Diboki
      Module: gladysUserInterface
-     Description: This module does …
+     Description: This module acts as a GPS by computing Users current location and calculating distance to second location
 """
 # Start of Code by Georges Diboki 
 
@@ -10,3 +10,10 @@ def main():
     x1, y1, x2, y2 = None, None, None, None 
     while True: 
         print("GPS Distance Calculator")
+        print("Type 'c' to set current position")
+        print("Type 'd' to set destination position")
+        print("Type 'm' to map the distance")
+        print("Type 't' to run module tests")
+        print("Type 'q' to quit")
+
+    #
