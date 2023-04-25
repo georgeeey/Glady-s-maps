@@ -18,22 +18,25 @@ def main():
 
 #User choice 
     choice = input("Enter your choice:")
-if choice = 'c': 
-    x1 = float("Enter your current x coordinate:")
-    y1 = float("Enter your current y coordinate:")
+
+#Current position
+if choice == 'c': 
+    x1 = float(input("Enter your current x coordinate:"))
+    y1 = float(input("Enter your current y coordinate:"))
     print("Current position set to ({x1}, {y1})")
-else choice = 'd': 
-    x2 = float("Enter the destination x coordinate:")
-    y2 = float("Enter the destination of y coordinate:")
-else choice = 'd'; 
+
+# Set Destination
+
+else choice == 'd'; 
     x2 = float("Enter the destination of x coordinate:")
     y2 = float("Enter the destination of y coordinate:")
     print("Destination position set to ({x2}, {y2})")
+
+# Map distance
+
 else choice == 'm':
     if x1 is None or y1 is None:
         print("Error: current position has not been set")
     else x2 is None or y2 is None:
         print("Error: destination position has not been set")
-    else:
-        distance = cartesian_distance(x1, y1, x2, y2)
-        print(f"The distance between the two locations is {distance:.2f} units")
+ 
