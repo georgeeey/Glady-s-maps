@@ -6,79 +6,55 @@
 # Start of Code by Georges Diboki 
 import math
 
+# Define the formula for calculating the distance between two points
+def map_distance(x1, y1, x2, y2):
+    distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+    return distance
 
-# Main function for menu and present to user
+# Define the main function that presents a text-based menu to the user
 def main():
     x1, y1, x2, y2 = None, None, None, None
     while True:
-        
-        print("==== GPS Distance Calculator ====")
+        # Print text based meny options
+        print("Glady's West Map")
         print("Type 'c' to set current position")
         print("Type 'd' to set destination position")
         print("Type 'm' to map the distance")
-        print("Type 't' to run module tests")
         print("Type 'q' to quit")
 
-# This line is to get the user's choice
-choice = input("Enter your choice: ")
+        # Prompt user to input choice
+        choice = input("Enter your choice: ")
 
-# Now to set the current position
-if choice == 'c':
-    x1 = float(input("Enter your current x coordinate: "))
-    y1 = float(input("Enter your current y coordinate: "))
-    print(f"Current position set to ({x1}, {y1})")
+        # Set the current position
+        if choice == 'c':
+            x1 = float(input("Enter your current x coordinate: "))
+            y1 = float(input("Enter your current y coordinate: "))
+            print(f"Current position set to ({x1}, {y1})")
 
-# Set the destination 
-elif choice == 'd':
-    x2 = float(input("Enter the destination x coordinate: "))
-    y2 = float(input("Enter the destination y coordinate: "))
-    print(f"Destination position set to ({x2}, {y2})")
+        # Set the destination
+        elif choice == 'd':
+            x2 = float(input("Enter the destination x coordinate: "))
+            y2 = float(input("Enter the destination y coordinate: "))
+            print(f"Destination position set to ({x2}, {y2})")
 
-# Calculate the distance
-elif choice == 'm':
-    if x1 is None or y1 is None:
-        print("Error: current position has not been set")
-    elif x2 is None or y2 is None:
+        # Map the distance
+        elif choice == 'm':
+            if x1 is None or y1 is None:
+                print("Error: current position has not been set")
+            elif x2 is None or y2 is None:
                 print("Error: destination position has not been set")
-    else:
-        distance = cartesian_distance(x1, y1, x2, y2)
-        print(f"The distance between the two locations is {distance:.2f} units")
+            else:
+                distance = map_distance(x1, y1, x2, y2)
+                print(f"The distance between the two locations is {distance:.2f} units")
 
-elif choice == 't':
-    print("Running module tests...")
+        # Quit the program
+        elif choice == 'q':
+            break
 
-elif choice == 'q':
+        # Handle invalid input
+        else:
+            print("Error: Invalid input")
 
-# print error if user enters invalid input
-else:
-    print("Error: Invalid input")
-
-# Loop function until user quits 'q'
-while True:
-    print("\nGPS App Menu:")
-    print("c - Set current position")
-    print("d - Set destination position")
-    print("m - Map distance between current and destination positions")
-    print("t - Run module tests")
-    print("q - Quit")
-
-choice = input("\nEnter choice: ")
-
-if choice == "c":
-    set_current_pos()
-elif choice == "d":
-    set_destination_pos()
-elif choice == "m":
-    map_distance()
-elif choice == "t":
-    run_tests()
-elif choice == "q":
-    break
-else:
-    print("Invalid choice. Please try again.")
-
-
-# Function to start program
+# Call the main function to start the program
 if __name__ == '__main__':
     main()
-
