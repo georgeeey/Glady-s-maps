@@ -27,14 +27,25 @@ def main():
 
         # Set the current position
         if choice == 'c':
-            x1 = float(input("Enter your current x coordinate: "))
-            y1 = float(input("Enter your current y coordinate: "))
-            print(f"Current position set to ({x1}, {y1})")
+            x1 = float(input("Enter your current x coordinate 0-99: "))
+            y1 = float(input("Enter your current y coordinate 0-99: "))
+
+            #verify coordinates set between 0 and 99
+            if not (0 <= x1 <= 99 and 0 <= y1 <= 99):
+                print("Invalid input. X and Y coordinates must be between 0 and 99")
+            else:
+                print(f"Current position set to ({x1}, {y1})")
 
         # Set the destination
         elif choice == 'd':
-            x2 = float(input("Enter the destination x coordinate: "))
-            y2 = float(input("Enter the destination y coordinate: "))
+            x2 = float(input("Enter the destination x coordinate 0-99: "))
+            y2 = float(input("Enter the destination y coordinate 0-99: "))
+
+            if not (0 <= x2 <= 99 and 0 <= y2 <= 99):
+                print("Invalid input. X and Y coordinates must be between 0 and 99")
+            else:
+                print(f"Current position set to ({x1}, {y1})")
+
             print(f"Destination position set to ({x2}, {y2})")
 
         # Map the distance
