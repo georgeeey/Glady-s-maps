@@ -15,10 +15,11 @@ def map_distance(x1, y1, x2, y2):
 def main():
     x1, y1, x2, y2 = None, None, None, None
     while True:
-        # Print text based meny options
+        # Print text based menu options
         print("Glady's West Map")
         print("Type 'c' to set current position")
         print("Type 'd' to set destination position")
+        print("Type 't' to run module tests")
         print("Type 'm' to map the distance")
         print("Type 'q' to quit")
 
@@ -57,12 +58,16 @@ def main():
             else:
                 distance = map_distance(x1, y1, x2, y2)
                 print(f"The distance between the two locations is {distance:.2f} units")
+        
+        #run module tests 
+        elif choice == 't': 
+            print("Running module tests..")
 
         # Quit the program
         elif choice == 'q':
             break
 
-        # Handle invalid input
+        # Handle invalid input 
         else:
             print("Error: Invalid input")
 
